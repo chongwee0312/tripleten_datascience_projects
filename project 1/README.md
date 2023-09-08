@@ -10,6 +10,13 @@ This project aims to answer the following questions:
 3. Is there a correlation between income level and paying back on time?
 4. How does loan purpose affect the default rate?
 
+# Hypothesis
+To answer the questions above, the following hypotheses are formulated:
+1. Customers who have no children have a lower default rate compared to those have children.
+2. Customers who are married have a lower default rate compared to those are unmarried
+3. Customers with high income have the lowest default rate.
+4. Customers who borrow a loan for education have the highest default rate.
+
 # Data
 **Description of the data**
 - `children` - the number of children in the family
