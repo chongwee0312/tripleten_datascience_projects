@@ -11,7 +11,6 @@ This project aims to answer the following questions:
 4. How does loan purpose affect the default rate?
 
 # Data
-The bank has provided some data on customers' credit worthiness to perform the analysis.
 **Description of the data**
 - `children` - the number of children in the family
 - `days_employed` - work experience in days
