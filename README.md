@@ -1,1 +1,1 @@
-# TripleTen_Projects
+# TripleTen Data Science Projects
