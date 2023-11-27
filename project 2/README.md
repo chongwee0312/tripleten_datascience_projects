@@ -30,7 +30,7 @@ To answer the questions above, the following hypotheses are formulated:
 - `days_listed` — from publication to removal
 
 # Libraries Used
-pandas, matplotlib.pyplot, seaborn
+pandas, matplotlib, seaborn
 
 # Table of Contents
 1. Introduction
