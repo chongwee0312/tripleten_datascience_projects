@@ -24,7 +24,7 @@ To answer the questions above, the following hypotheses are formulated:
 - usd_per_gb — price per extra gigabyte of data after exceeding the package limits (1 GB = 1024 megabytes)
 
 # Libraries Used
-pandas, matplotlib, seaborn, scipy
+pandas, numpy, matplotlib, seaborn, scipy
 
 # Table of Contents
 1. Introduction
