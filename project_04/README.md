@@ -27,7 +27,7 @@ Two hypotheses are formulated:
 - Rating: the age and content rating of the game
 
 # Libraries Used
-pandas, numpy, matplotlib, seaborn, scipy
+Pandas, Numpy, Matplotlib, Seaborn, Scipy
 
 # Table of Contents
 1. Introduction
