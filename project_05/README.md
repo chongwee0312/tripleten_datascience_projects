@@ -17,7 +17,7 @@ One hypothesis is formulated to test the impact of weather on ride-sharing servi
 - trips_amount: the number of rides for each taxi company on November 15-16, 2017.
 
 # Libraries Used
-pandas, numpy, matplotlib, seaborn, scipy
+Pandas, Numpy, Matplotlib, Seaborn, Scipy, Requests, Beautiful Soup
 
 # Table of Contents
 1. Introduction
