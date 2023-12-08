@@ -33,7 +33,7 @@ To answer the questions above, the following hypotheses are formulated:
 - `purpose` - the purpose of obtaining a loan
 
 # Libraries Used
-pandas
+Pandas
 
 # Table of Contents
 1. Introduction
