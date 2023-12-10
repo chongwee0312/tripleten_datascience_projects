@@ -25,7 +25,7 @@ To develop a binary classification model which analyses the data on customers' p
 - Exited — сustomer has left
 
 # Libraries Used
-Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, Imbalanced-Learn
+Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, CatBoost, Imbalanced-Learn
 
 # Table of Contents
 1. Introduction
