@@ -8,4 +8,4 @@
 | [project_04](project_04) | Identifying Patterns of Successful Games | Data Preprocessing, Data Mining, Data Visualisation, Hypothesis Testing | Pandas, Numpy, Matplotlib, Seaborn, Scipy |
 | [project_05](project_05) | Analysing the Impact of External Factors on Ride Sharing Service | Web Scraping, SQL, Data Preprocessing, Data Mining, Data Visualisation, Hypothesis Testing | Pandas, Numpy, Matplotlib, Seaborn, Scipy, Requests, Beautiful Soup |
 | [project_06](project_06) | Developing a Phone Plan Classification Model for a Mobile Carrier | Data Preprocessing, Machine Learning | Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn |
-| [project_07](project_07) | Developing a Customer Churn Prediction Model for a Bank | Data Preprocessing, Machine Learning | Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, Imbalanced-Learn |
+| [project_07](project_07) | Developing a Customer Churn Prediction Model for a Bank | Data Preprocessing, Machine Learning | Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, CatBoost, Imbalanced-Learn |
