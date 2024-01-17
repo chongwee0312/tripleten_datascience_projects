@@ -21,8 +21,10 @@ vectorizer = pickle.load(open(vectorizer_path, 'rb'))
 try:
     nlp = spacy.load('en_core_web_sm')
 except OSError:
-    spacy.cli.download('en_core_web_sm')
-    nlp = spacy.load('en_core_web_sm')
+    st.write("Downloading spaCy model 'en_core_web_sm'...")
+    spacy.cli.download('en_core_web_sm', '--no-binary=en_core_web_sm')
+    st.write("Download complete.")
+    nlp = spacy.load('en_core_web_sm')    
 
 def text_preprocessing(text):
     text = ' '.join(re.sub(r"[^a-zA-Z']", ' ', text).lower().split())
