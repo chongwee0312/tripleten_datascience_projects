@@ -18,7 +18,11 @@ vectorizer_path = os.path.join(current_dir, 'project_14_spacy_tfidf_vectorizer.p
 
 model = pickle.load(open(model_path, 'rb'))
 vectorizer = pickle.load(open(vectorizer_path, 'rb'))
-nlp = spacy.load('en_core_web_sm')
+try:
+    nlp = spacy.load('en_core_web_sm')
+except OSError:
+    spacy.cli.download('en_core_web_sm')
+    nlp = spacy.load('en_core_web_sm')
 
 def text_preprocessing(text):
     text = ' '.join(re.sub(r"[^a-zA-Z']", ' ', text).lower().split())
