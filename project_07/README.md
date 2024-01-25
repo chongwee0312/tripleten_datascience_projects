@@ -46,5 +46,5 @@ Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, CatBoost, Imbalanced-Learn
 7. Final Model Selection and Evaluation
    - 7.1 Threshold Adjustment
    - 7.2 F1-score, Precision and Recall
-   - ROC Curve and AUC-ROC Score
+   - 7.3 ROC Curve and AUC-ROC Score
 8. General Conclusion 
