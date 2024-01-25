@@ -1,6 +1,6 @@
 # TripleTen Data Science Projects
 
-Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Requests, Beautiful Soup, Scikit-Learn, AdaBoost, XGBoost, LightGBM, CatBoost, Imbalanced-Learn, Optuna
+Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Requests, Beautiful Soup, Scikit-Learn, AdaBoost, XGBoost, LightGBM, CatBoost, Imbalanced-Learn, Optuna
 
 | Project | Title | Hands-on Skills |
 | ------------- | ------------- | ------------- |
@@ -13,3 +13,4 @@ Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Requests, Beautiful Soup, 
 | [project_07](project_07) | Developing a Customer Churn Prediction Model for a Bank | Data Wrangling, Data Visualisation, Machine Learning, Imbalanced Classes |
 | [project_08](project_08) | Selecting the Most Profitable Oil Well Region with a Machine Learning Model | Data Visualisation, Machine Learning |
 | [project_09](project_09) | Developing a Regression Model to Predict the Gold Recovery for a Digital Solution Provider | Data Wrangling, Data Visualisation, Machine Learning, Multi-Output Regression |
+| [project_10](project_10) | Customer Insurance Benefits Evaluation and Data Obfuscation: Applications of Machine Learning and Linear Algebra | Data Wrangling, Machine Learning |
