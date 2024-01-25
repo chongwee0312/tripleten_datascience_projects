@@ -2,6 +2,7 @@
 
 Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Requests, Beautiful Soup, Scikit-Learn, AdaBoost, XGBoost, LightGBM, CatBoost, Imbalanced-Learn, Optuna
 
+
 | Project | Title | Hands-on Skills |
 | ------------- | ------------- | ------------- |
 | [project_01](project_01) | Analysing Borrowers' Risk of Defaulting | Data Wrangling, Data Mining |
