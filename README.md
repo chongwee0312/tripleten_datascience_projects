@@ -9,3 +9,5 @@
 | [project_05](project_05) | Analysing the Impact of External Factors on Ride Sharing Service | Web Scraping, SQL, Data Preprocessing, Data Mining, Data Visualisation, Hypothesis Testing | Pandas, Numpy, Matplotlib, Seaborn, Scipy, Requests, Beautiful Soup |
 | [project_06](project_06) | Developing a Phone Plan Classification Model for a Mobile Carrier | Data Preprocessing, Machine Learning | Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn |
 | [project_07](project_07) | Developing a Customer Churn Prediction Model for a Bank | Data Preprocessing, Machine Learning | Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, CatBoost, Imbalanced-Learn |
+| [project_08](project_08) | Selecting the Most Profitable Oil Well Region with a Machine Learning Model | Data Preprocessing, Machine Learning | Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, CatBoost, Imbalanced-Learn |
+| [project_08](project_08) | Developing a Regression Model to Predict the Gold Recovery for a Digital Solution Provider | Data Preprocessing, Machine Learning | Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, CatBoost, Imbalanced-Learn |
