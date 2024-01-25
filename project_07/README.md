@@ -36,7 +36,7 @@ Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, CatBoost, Imbalanced-Learn
    - 4.2 Distributions of the Numerical Features Data Per Target Class
    - 4.3 Distributions of the Categorical Features Data based on Target Classes
    - 4.4 Distribution of the Target Classes
-5. Feature Engineering
+5. Feature Processing
 6. Development and Fine Tuning of Different Models
    - 6.1 Without Resampling
    - 6.2 Class Weight Adjustment
