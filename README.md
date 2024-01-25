@@ -12,4 +12,4 @@ Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Requests, Beautiful Soup, 
 | [project_06](project_06) | Developing a Phone Plan Classification Model for a Mobile Carrier | Data Visualisation, Machine Learning |
 | [project_07](project_07) | Developing a Customer Churn Prediction Model for a Bank | Data Wrangling, Data Visualisation, Machine Learning, Imbalanced Classes |
 | [project_08](project_08) | Selecting the Most Profitable Oil Well Region with a Machine Learning Model | Data Visualisation, Machine Learning |
-| [project_09](project_09) | Developing a Regression Model to Predict the Gold Recovery for a Digital Solution Provider | Data Wrangling, Data Visualisation, Machine Learning |
+| [project_09](project_09) | Developing a Regression Model to Predict the Gold Recovery for a Digital Solution Provider | Data Wrangling, Data Visualisation, Machine Learning, Multi Target Regression |
