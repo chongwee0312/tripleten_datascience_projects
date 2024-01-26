@@ -22,7 +22,7 @@ To solve the following tasks given by the Sure Tomorrow insurance company:
 *Target*
 - Insurance benefits - number of insurance benefits received by an insured person over the last five years
 
-# Libraries Used
+# Main Libraries Used
 Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
 
 # Table of Contents
