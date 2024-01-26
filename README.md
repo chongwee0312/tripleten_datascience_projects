@@ -15,3 +15,4 @@ Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Requests, Beautiful S
 | [project_08](project_08) | Selecting the Most Profitable Oil Well Region with a Machine Learning Model | Data Visualisation, Regression Model, Bootstrapping |
 | [project_09](project_09) | Developing a Regression Model to Predict the Gold Recovery for a Digital Solution Provider | Data Wrangling, Data Visualisation, Regression Model (Multi-Output Regression) |
 | [project_10](project_10) | Customer Insurance Benefits Evaluation and Data Obfuscation: Applications of Machine Learning and Linear Algebra | Data Wrangling, Regression Model |
+| [project_11](project_11) | Developing a Machine Learning Model to Predict Car Prices | Data Wrangling, Data Visualisation, Regression Model |
