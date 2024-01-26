@@ -14,7 +14,7 @@ To develop a machine learning model which predicts the volume of reserves in the
 *Target*
 - product — volume of reserves in the oil well (thousand barrels)
 
-# Libraries Used
+# Main Libraries Used
 Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
 
 # Table of Contents
