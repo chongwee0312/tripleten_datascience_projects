@@ -23,7 +23,7 @@ To answer the questions above, the following hypotheses are formulated:
 - usd_per_message — price per text after exceeding the package limits
 - usd_per_gb — price per extra gigabyte of data after exceeding the package limits (1 GB = 1024 megabytes)
 
-# Libraries Used
+# Main Libraries Used
 Pandas, Numpy, Matplotlib, Seaborn, Scipy
 
 # Table of Contents
