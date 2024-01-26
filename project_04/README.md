@@ -26,7 +26,7 @@ Two hypotheses are formulated:
 - User_Score: score (out of a maximum of 10) rated by users
 - Rating: the age and content rating of the game
 
-# Libraries Used
+# Main Libraries Used
 Pandas, Numpy, Matplotlib, Seaborn, Scipy
 
 # Table of Contents
