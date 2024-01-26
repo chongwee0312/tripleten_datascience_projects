@@ -16,7 +16,7 @@ One hypothesis is formulated to test the impact of weather on ride-sharing servi
 - comapany_name: taxi company name
 - trips_amount: the number of rides for each taxi company on November 15-16, 2017.
 
-# Libraries Used
+# Main Libraries Used
 Pandas, Numpy, Matplotlib, Seaborn, Scipy, Requests, Beautiful Soup
 
 # Table of Contents
