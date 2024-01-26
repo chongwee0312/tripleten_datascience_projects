@@ -29,7 +29,7 @@ To answer the questions above, the following hypotheses are formulated:
 - `date_posted` — the date the ad was published
 - `days_listed` — from publication to removal
 
-# Libraries Used
+# Main Libraries Used
 Pandas, Matplotlib, Seaborn
 
 # Table of Contents
