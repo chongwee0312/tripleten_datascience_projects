@@ -37,8 +37,8 @@ Other columns are named with the format *[stage].[parameter_type].[parameter_nam
 - **rougher.output.recovery**
 - **final.output.recovery**
 
-# Libraries Used
-Pandas, Numpy, Statsmodels, Matplotlib, Seaborn, Scikit-Learn, XGBoost, CatBoost, LightGBM
+# Main Libraries Used
+Pandas, Numpy, Statsmodels, Matplotlib, Seaborn, Scikit-Learn, XGBoost, CatBoost, LightGBM, Optuna
 
 # Table of Contents
 1. Introduction
