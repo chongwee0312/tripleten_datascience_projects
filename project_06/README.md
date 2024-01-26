@@ -12,7 +12,7 @@ To develop a binary classification model which analyses user behaviour and recom
 - mb_used: internet traffic used in MB
 - is_ultra: plan for the current month (Ultra - 1, Smart - 0)
 
-# Libraries Used
+# Main Libraries Used
 Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
 
 # Table of Contents
