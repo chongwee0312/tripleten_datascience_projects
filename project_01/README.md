@@ -32,7 +32,7 @@ To answer the questions above, the following hypotheses are formulated:
 - `total_income` - monthly income
 - `purpose` - the purpose of obtaining a loan
 
-# Libraries Used
+# Main Libraries Used
 Pandas
 
 # Table of Contents
