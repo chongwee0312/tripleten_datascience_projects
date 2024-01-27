@@ -1,6 +1,6 @@
 # TripleTen Data Science Projects
 
-Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Plotly, Requests, Beautiful Soup, Scikit-Learn, AdaBoost, XGBoost, LightGBM, CatBoost, Imbalanced-Learn, Optuna</br>
+Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Plotly, Requests, Beautiful Soup, Scikit-Learn, AdaBoost, XGBoost, LightGBM, CatBoost, Tensorflow, Keras, Pytorch, Transformer, NLTK, SpaCy, Imbalanced-Learn, Optuna</br>
 
 
 | Project | Title | Hands-on Skills |
@@ -17,3 +17,5 @@ Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Plotly, Requests, Bea
 | [project_10](project_10) | Customer Insurance Benefits Evaluation and Data Obfuscation: Applications of Machine Learning and Linear Algebra | Data Wrangling, Regression Model |
 | [project_11](project_11) | Developing a Machine Learning Model to Predict Car Prices | Data Wrangling, Data Visualisation, Regression Model |
 | [project_12](project_12) | Time Series Analysis and Forecasting on Taxi Order Amount | Data Visualisation, Regression Model, Time Series |
+| [project_13](project_13) | Sentiment Analysis on Movie Reviews | Data Visualisation, Classification Model, Natural Language Preprocessing, Model Deployment |
+| [project_14](project_14) | Developing an Age Detector by Photo | Data Visualisation, Regression Model, Computer Vision |
