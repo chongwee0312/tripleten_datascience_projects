@@ -1,6 +1,6 @@
 # TripleTen Data Science Projects
 
-Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Plotly, Requests, Beautiful Soup, Scikit-Learn, AdaBoost, XGBoost, LightGBM, CatBoost, Tensorflow, Keras, Pytorch, Transformers, NLTK, SpaCy, Imbalanced-Learn, Optuna</br>
+Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Plotly, Requests, Beautiful Soup, Scikit-Learn, AdaBoost, XGBoost, LightGBM, CatBoost, Tensorflow, Keras, PyTorch, Transformers, NLTK, SpaCy, Imbalanced-Learn, Optuna</br>
 
 
 | Project | Title | Hands-on Skills |
