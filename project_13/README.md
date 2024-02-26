@@ -49,6 +49,7 @@ Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, LightGBM, Tensorflow, PyTorch,
        - 4.3.2 NLTK / TF-IDF
        - 4.3.3 spaCy/ TF-IDF
        - 4.3.4 BERT
+       - 4.3.5 Bidirectional Long-short Term Memory
    - 4.4 Final Evaluation
 5. My Reviews
 6. Model Deployment
