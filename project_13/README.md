@@ -54,3 +54,5 @@ Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, LightGBM, Tensorflow, PyTorch,
 5. My Reviews
 6. Model Deployment
 7. General Conclusion
+
+The model has been successfully deployed by using the Streamlit app. Have a try with the link [Sentiment Analysis on a Movie Review](https://moviereviewpolarityapppy-estdryd4emjykb4gz99yk9.streamlit.app/) .
