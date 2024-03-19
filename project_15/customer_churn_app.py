@@ -20,6 +20,7 @@ if 'filename' not in st.session_state:
 # Get the scaler and model loading path
 current_dir = os.path.dirname(os.path.realpath(__file__))
 sc_path = os.path.join(current_dir, 'scaler.pkl')
+features_path = os.path.join(current_dir, 'feature_columns.pkl')
 model_path = os.path.join(current_dir, 'models', 'CatBoost.pkl')
 
 # Load the model and scaler
