@@ -12,18 +12,6 @@ import pickle
 import re
 from datetime import datetime
 
-# Background colour
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #f0f2f6; /* Change this value to the desired color */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 if 'df' not in st.session_state:
     st.session_state['df'] = pd.DataFrame()
 if 'filename' not in st.session_state:
