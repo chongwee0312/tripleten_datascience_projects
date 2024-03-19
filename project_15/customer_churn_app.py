@@ -117,7 +117,7 @@ if data:
     X[numerical_features] = sc.fit_transform(X[numerical_features])
     
     # Recreate the features to comply with the model
-    feature_columns = pickle.load(open('feature_columns.pkl', 'rb'))
+    feature_columns = pickle.load(open(features_path, 'rb'))
     X_final = pd.DataFrame(columns=feature_columns)
     
     for col in X_final.columns:
