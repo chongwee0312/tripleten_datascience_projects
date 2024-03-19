@@ -12,6 +12,18 @@ import pickle
 import re
 from datetime import datetime
 
+# Background colour
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f2f6; /* Change this value to the desired color */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 if 'df' not in st.session_state:
     st.session_state['df'] = pd.DataFrame()
 if 'filename' not in st.session_state:
@@ -213,6 +225,8 @@ if data and 'churn' in df.columns:
                 
                 st.write(f'{choice} ({group})')
                 st.table(table.style.format("{:.2f}"))
+
+    # Boxplots for numerical features
     elif choice.lower() in ['monthly charges', 'total charges', 'subscribed days',
                                'subscribed years', 'total internet services']:
         feature = '_'.join(choice.lower().split(' ')) 
