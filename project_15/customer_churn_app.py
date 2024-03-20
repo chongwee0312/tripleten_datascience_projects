@@ -112,27 +112,27 @@ if data:
     # Save the current df in session state
     st.session_state['df'] = df
     
-    # Get the features for prediction
-    X = df.drop(columns=['customer_id', 'begin_date'])
-    
-    # One-hot enconding and feature scaling
-    X = pd.get_dummies(X, drop_first=True, dtype=int)
-    
-    numerical_features = ['monthly_charges', 'total_charges', 'subscribed_days', 'subscribed_years', 'total_internet_services']
-    X[numerical_features] = sc.fit_transform(X[numerical_features])
-    
-    # Recreate the features to comply with the model
-    feature_columns = pickle.load(open(features_path, 'rb'))
-    X_final = pd.DataFrame(columns=feature_columns)
-    
-    for col in X_final.columns:
-        if col in X.columns:
-            X_final[col] = X[col]
-        else:
-            X_final[col] = 0
-
     # Make the prediction    
     if st.button('Predict'):
+        # Get the features for prediction
+        df.drop(columns=['customer_id', 'begin_date'], inplace=True)
+        
+        # One-hot enconding and feature scaling
+        X = pd.get_dummies(df, drop_first=True, dtype=int)
+        
+        numerical_features = ['monthly_charges', 'total_charges', 'subscribed_days', 'subscribed_years', 'total_internet_services']
+        X[numerical_features] = sc.fit_transform(X[numerical_features])
+        
+        # Recreate the features to comply with the model
+        feature_columns = pickle.load(open(features_path, 'rb'))
+        X_final = pd.DataFrame(columns=feature_columns)
+        
+        for col in X_final.columns:
+            if col in X.columns:
+                X_final[col] = X[col]
+            else:
+                X_final[col] = 0
+        
         df_pred = df.copy()
         df_pred['churn'] = model.predict(X_final)
         
@@ -142,7 +142,7 @@ if data:
 df = st.session_state['df']
 df_pred = st.session_state['df_pred']
 
-if data and ('churn' in df_pred.columns) and ((df['customer_id'] == df_pred['customer_id']).sum() == len(df)):
+if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
     # Show the prediction
     st.header('Prediction')
     st.write(df_pred)
