@@ -36,106 +36,106 @@ st.set_page_config(page_title='Customer Churn Prediction')
 # Set the title
 st.title('Customer Churn Prediction')
 
-# Accept the uploaded dataset
-st.header('Dataset')
-
-data = st.file_uploader(label='**Upload the dataset for prediction:**')
-
 # Read the upload file into a dataframe
-if data:    
-    df = pd.read_csv(data)
-    st.session_state['filename'] = data.name  
-    
-    # Preprocess the data for prediction
-    # Rename columns
-    df.columns = [re.sub(r'([A-Z])', r' \1', col).lower().strip().replace(' ', '_') for col in df.columns]
-    df.rename(columns={
-        'customer_i_d': 'customer_id',
-        'streaming_t_v': 'streaming_tv'
-    }, inplace=True)
-
-    # Fill the missing values in the services
-    services = ['internet_service', 'online_security', 'online_backup', 'device_protection',
-                'tech_support', 'streaming_tv', 'streaming_movies', 'multiple_lines']
-    df[services] = df[services].fillna('not_subscribed')
-    
-    # Replace invalid values
-    df['total_charges'].replace(' ', 0, inplace=True)
-    
-    # Convert the data types
-    df['begin_date'] = pd.to_datetime(df['begin_date'], format='%m/%d/%Y')
-    df['total_charges'] = df['total_charges'].astype(float)
-    
-    # Add `monthly_charges` to the 'total_charges'
-    df['total_charges'] = df['total_charges'] + df['monthly_charges']
-
-    # Find the total subscribed_days and years
-    current_date = datetime.now()
-    df['subscribed_days'] = (current_date - df['begin_date']).dt.days
-    df['subscribed_years'] = current_date.year - df['begin_date'].dt.year
-
-    # Calculate the `total_services`
-    def assign_service_type(row):
-        '''
-        Assign the type of service subscribed by a customer.
-        '''
-        if row['internet_service'] != 'not_subscribed' and row['multiple_lines'] == 'not_subscribed':
-            return 'internet_service'
-        elif row['internet_service'] == 'not_subscribed' and row['multiple_lines'] != 'not_subscribed':
-            return 'landline_communication'
-        else:
-            return 'both'
-
-    df['subscribed_service'] = df.apply(assign_service_type, axis=1)
-
-    # Calculate the `total_internet_services`    
-    internet_services = ['online_security', 'online_backup', 'device_protection',
-                         'tech_support', 'streaming_tv', 'streaming_movies']    
-    
-    def calc_total_internet_services(row):
-        '''
-        Calculate and return total number of subsribed internet services of a customer
-        '''
-        count = 0
-    
-        for service in internet_services:
-            if row[service] == 'Yes':
-                count += 1
-    
-        return count
-        
-    df['total_internet_services'] = df.apply(calc_total_internet_services, axis=1)
-
-    # Show the dataset after preprocessing
-    st.write(df)
-    
-    # Make the prediction    
-    if st.button('Predict'):
-        # Get the features for prediction
-        df.drop(columns=['customer_id', 'begin_date'], inplace=True)
-        
-        # One-hot enconding and feature scaling
-        X = pd.get_dummies(df, drop_first=True, dtype=int)
-        
-        numerical_features = ['monthly_charges', 'total_charges', 'subscribed_days', 'subscribed_years', 'total_internet_services']
-        X[numerical_features] = sc.fit_transform(X[numerical_features])
-        
-        # Recreate the features to comply with the model
-        feature_columns = pickle.load(open(features_path, 'rb'))
-        X_final = pd.DataFrame(columns=feature_columns)
-        
-        for col in X_final.columns:
-            if col in X.columns:
-                X_final[col] = X[col]
-            else:
-                X_final[col] = 0
-        
-        df_pred = df.copy()
-        df_pred['churn'] = model.predict(X_final)        
-
-        # Save the dataframes
+st.header('Dataset')
+if st.button('Upload dataset'):
+    # Accept the uploaded dataset
+    data = st.file_uploader(label='**Upload the dataset for prediction:**')
+    if data:    
+        df = pd.read_csv(data)
         st.session_state['df'] = df
-        st.session_state['df_pred'] = df_pred
+        st.session_state['filename'] = data.name  
+        
+        # Preprocess the data for prediction
+        # Rename columns
+        df.columns = [re.sub(r'([A-Z])', r' \1', col).lower().strip().replace(' ', '_') for col in df.columns]
+        df.rename(columns={
+            'customer_i_d': 'customer_id',
+            'streaming_t_v': 'streaming_tv'
+        }, inplace=True)
+    
+        # Fill the missing values in the services
+        services = ['internet_service', 'online_security', 'online_backup', 'device_protection',
+                    'tech_support', 'streaming_tv', 'streaming_movies', 'multiple_lines']
+        df[services] = df[services].fillna('not_subscribed')
+        
+        # Replace invalid values
+        df['total_charges'].replace(' ', 0, inplace=True)
+        
+        # Convert the data types
+        df['begin_date'] = pd.to_datetime(df['begin_date'], format='%m/%d/%Y')
+        df['total_charges'] = df['total_charges'].astype(float)
+        
+        # Add `monthly_charges` to the 'total_charges'
+        df['total_charges'] = df['total_charges'] + df['monthly_charges']
+    
+        # Find the total subscribed_days and years
+        current_date = datetime.now()
+        df['subscribed_days'] = (current_date - df['begin_date']).dt.days
+        df['subscribed_years'] = current_date.year - df['begin_date'].dt.year
+    
+        # Calculate the `total_services`
+        def assign_service_type(row):
+            '''
+            Assign the type of service subscribed by a customer.
+            '''
+            if row['internet_service'] != 'not_subscribed' and row['multiple_lines'] == 'not_subscribed':
+                return 'internet_service'
+            elif row['internet_service'] == 'not_subscribed' and row['multiple_lines'] != 'not_subscribed':
+                return 'landline_communication'
+            else:
+                return 'both'
+    
+        df['subscribed_service'] = df.apply(assign_service_type, axis=1)
+    
+        # Calculate the `total_internet_services`    
+        internet_services = ['online_security', 'online_backup', 'device_protection',
+                             'tech_support', 'streaming_tv', 'streaming_movies']    
+        
+        def calc_total_internet_services(row):
+            '''
+            Calculate and return total number of subsribed internet services of a customer
+            '''
+            count = 0
+        
+            for service in internet_services:
+                if row[service] == 'Yes':
+                    count += 1
+        
+            return count
+            
+        df['total_internet_services'] = df.apply(calc_total_internet_services, axis=1)
+    
+        # Show the dataset after preprocessing
+        st.write(df)
+        
+        # Make the prediction    
+        if st.button('Predict'):
+            # Get the features for prediction
+            df.drop(columns=['customer_id', 'begin_date'], inplace=True)
+            
+            # One-hot enconding and feature scaling
+            X = pd.get_dummies(df, drop_first=True, dtype=int)
+            
+            numerical_features = ['monthly_charges', 'total_charges', 'subscribed_days', 'subscribed_years', 'total_internet_services']
+            X[numerical_features] = sc.fit_transform(X[numerical_features])
+            
+            # Recreate the features to comply with the model
+            feature_columns = pickle.load(open(features_path, 'rb'))
+            X_final = pd.DataFrame(columns=feature_columns)
+            
+            for col in X_final.columns:
+                if col in X.columns:
+                    X_final[col] = X[col]
+                else:
+                    X_final[col] = 0
+            
+            df_pred = df.copy()
+            df_pred['churn'] = model.predict(X_final)        
+    
+            # Save the dataframes
+            st.session_state['df'] = df
+            st.session_state['df_pred'] = df_pred
         
 # Get the saved dataframes
 df = st.session_state['df_pred']
