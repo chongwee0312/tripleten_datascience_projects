@@ -45,6 +45,9 @@ data = st.file_uploader(label='**Upload the dataset for prediction:**')
 if data:    
     df = pd.read_csv(data)
     st.session_state['filename'] = data.name
+
+    # To clear the prediction if the data is reuploaded
+    st.session_state['df_pred'] = pd.DataFrame()
     
     # Preprocess the data for prediction
     # Rename columns
@@ -131,16 +134,14 @@ if data:
                 X_final[col] = 0
         
         df_pred = df.copy()
-        df_pred['churn'] = model.predict(X_final)
+        df_pred['churn'] = model.predict(X_final)        
         
-        st.session_state['df'] = df 
         st.session_state['df_pred'] = df_pred
         
-# Get the saved dataframes
-df = st.session_state['df']
+# Get the saved dataframe
 df_pred = st.session_state['df_pred']
 
-if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
+if data and not df_pred.empty:
     # Show the prediction
     st.header('Prediction')
     st.write(df_pred)
