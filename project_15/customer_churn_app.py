@@ -141,7 +141,8 @@ if data:
 # Get the saved dataframes
 df = st.session_state['df']
 df_pred = st.session_state['df_pred']
-
+st.write(df)
+st.write(df_pred)
 if data and ('churn' in df_pred.columns):
     # Show the prediction
     st.header('Prediction')
