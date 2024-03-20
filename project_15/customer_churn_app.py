@@ -13,10 +13,10 @@ import re
 from datetime import datetime
 
 # Initialise the items in station state
-if 'df' not in st.session_state:
-    st.session_state['df'] = pd.DataFrame()
 if 'df_pred' not in st.session_state:
     st.session_state['df_pred'] = pd.DataFrame()
+if 'show_prediction' not in st.session_state:
+    st.session_state['show_prediction'] = False
 if 'filename' not in st.session_state:
     st.session_state['filename'] = ''
 
@@ -43,8 +43,8 @@ st.header('Dataset')
 data = st.file_uploader(label='**Upload the dataset for prediction:**')
 if data:    
     df = pd.read_csv(data)
-    st.session_state['df'] = df
-    st.session_state['filename'] = data.name  
+    st.session_state['show_prediction'] = False
+    st.session_state['filename'] = data.name
     
     # Preprocess the data for prediction
     # Rename columns
@@ -133,15 +133,14 @@ if data:
         df_pred = df.copy()
         df_pred['churn'] = model.predict(X_final)        
 
-        # Save the dataframes
-        st.session_state['df'] = df
+        # Adjust the session state
+        st.session_state['show_prediction'] = True
         st.session_state['df_pred'] = df_pred
         
-# Get the saved dataframes
-df = st.session_state['df']
+# Get the saved dataframe
 df_pred = st.session_state['df_pred']
 
-if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
+if st.session_state['show_prediction']:
     # Show the prediction
     st.header('Prediction')
     st.write(df_pred)
