@@ -136,8 +136,7 @@ df = st.session_state['df']
 if data and 'churn' in df.columns:
     # Show the prediction
     st.header('Prediction')
-    st.write(df.head(10))
-    st.write('Only the first 10 rows will be shown.')
+    st.write(df)
 
     # Create a button for downlaoding the prediction result
     download_filename = st.session_state['filename'].split('.')[0] + '_prediction.csv'
