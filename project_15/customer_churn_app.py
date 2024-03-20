@@ -153,7 +153,7 @@ if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
     st.header('Prediction Result Analysis')
     
     menu = list(df_pred.columns)
-
+    menu.remove('Churn')
     menu = [' '.join(word.capitalize() for word in x.split('_')) for x in menu]
     menu.insert(0, 'Choose the characteristic')
     menu.insert(1, 'Overall')
