@@ -142,19 +142,19 @@ if data:
 df = st.session_state['df']
 df_pred = st.session_state['df_pred']
 
-if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn'])):
+if data and ('churn' in df_pred.columns) and (df == df_pred.drop(columns=['churn'])):
     # Show the prediction
     st.header('Prediction')
-    st.write(df)
+    st.write(df_pred)
 
     # Create a button for downlaoding the prediction result
     download_filename = st.session_state['filename'].split('.')[0] + '_prediction.csv'
-    st.download_button(label='Download Prediction', data=df.to_csv(index=False), mime='text/csv', file_name=download_filename)
+    st.download_button(label='Download Prediction', data=df_pred.to_csv(index=False), mime='text/csv', file_name=download_filename)
 
     # Prediction Result Analysis per characteristic
     st.header('Prediction Result Analysis')
     
-    menu = list(df.columns)
+    menu = list(df_pred.columns)
     for col in ['customer_id', 'begin_date', 'churn']:
         menu.remove(col)    
     menu = [' '.join(word.capitalize() for word in x.split('_')) for x in menu]
@@ -166,7 +166,7 @@ if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn'])):
 
     # Overall churn rate
     if choice.lower() == 'overall':
-        result = df['churn'].value_counts().to_frame()
+        result = df_pred['churn'].value_counts().to_frame()
         result.index = result.index.map({0: 'Stay', 1:'Leave'})
         
         with col1:            
@@ -193,7 +193,7 @@ if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn'])):
         with col1: 
             plt.figure(figsize=(3, 3))
             palette = ['steelblue', 'tomato']
-            sns.histplot(data=df, x=feature, hue='churn', multiple='fill', discrete=True, 
+            sns.histplot(data=df_pred, x=feature, hue='churn', multiple='fill', discrete=True, 
                          palette=palette, legend=True)
             title = f'Customer Churn Rate ({choice})'
             plt.title(title, fontweight='bold', y=1.05)
@@ -211,8 +211,8 @@ if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn'])):
             
             st.pyplot(plt)
         with col2:
-            for group in df[feature].unique():                
-                table = df[df[feature] == group]
+            for group in df_pred[feature].unique():                
+                table = df_pred[df_pred[feature] == group]
                 table = table['churn'].value_counts().to_frame()
                 table.rename_axis('', inplace=True)
                 table.index = table.index.map({0: 'Stay', 1:'Leave'})
@@ -228,7 +228,7 @@ if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn'])):
         
         with col1:
             plt.figure(figsize=(2, 2))
-            sns.boxplot(data=df, x='churn', y=feature, hue='churn', legend=False,
+            sns.boxplot(data=df_pred, x='churn', y=feature, hue='churn', legend=False,
                         palette=['steelblue', 'tomato'])
             plt.title(choice, fontsize=7, fontweight='bold')
             plt.xlabel('')
@@ -240,8 +240,8 @@ if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn'])):
             st.pyplot(plt)
         with col2:
             table = pd.concat([
-                df.query('churn == 0')[feature].describe(),
-                df.query('churn == 1')[feature].describe()
+                df_pred.query('churn == 0')[feature].describe(),
+                df_pred.query('churn == 1')[feature].describe()
             ], axis=1).round(2)
             table.drop(index=['std', '25%', '75%'], inplace=True)
             table.rename(index={'50%': 'median'}, inplace=True)
