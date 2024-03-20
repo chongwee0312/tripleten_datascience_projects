@@ -141,9 +141,8 @@ if data:
 # Get the saved dataframes
 df = st.session_state['df']
 df_pred = st.session_state['df_pred']
-st.write(df)
-st.write(df_pred)
-if data and ('churn' in df_pred.columns):
+
+if data and ('churn' in df_pred.columns) and ((df['customer_id'] == df_pred['customer_id']).sum() == len(df)):
     # Show the prediction
     st.header('Prediction')
     st.write(df_pred)
