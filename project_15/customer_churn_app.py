@@ -104,8 +104,7 @@ if data:
     df['total_internet_services'] = df.apply(calc_total_internet_services, axis=1)
 
     # Show the dataset after preprocessing
-    st.write(df.head(10))
-    st.write('Only the first 10 rows will be shown.')
+    st.write(df)    
 
     # Get the features for prediction
     X = df.drop(columns=['customer_id', 'begin_date'])
