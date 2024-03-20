@@ -167,9 +167,9 @@ if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
         result.index = result.index.map({0: 'Stay', 1:'Leave'})
         
         with col1:            
-            plt.figure(figsize=(3, 3))
+            plt.figure(figsize=(3, 2))
             sns.barplot(x=result.index, y=result['count'], hue=result.index, palette=['steelblue', 'tomato'])
-            plt.title('Customer Churn Rate', y=1.05, fontweight='bold')
+            plt.title('Customer Churn Rate', fontsize=9, fontweight='bold')
             plt.xlabel('')
             plt.ylabel('Number of customers', fontweight='bold')
             plt.xticks(fontweight='bold')
