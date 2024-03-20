@@ -40,10 +40,13 @@ st.title('Customer Churn Prediction')
 st.header('Dataset')
 
 # Accept the uploaded dataset
-data = st.file_uploader(label='**Upload the dataset for prediction:**')
-if data:    
-    df = pd.read_csv(data)
+if st.button('Upload the dataset'):
+    data = st.file_uploader(label='**Upload the dataset for prediction:**')
     st.session_state['show_prediction'] = False
+
+# Read and process the data
+if data:    
+    df = pd.read_csv(data)    
     st.session_state['filename'] = data.name
     
     # Preprocess the data for prediction
