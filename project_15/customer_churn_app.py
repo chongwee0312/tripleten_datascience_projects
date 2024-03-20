@@ -138,7 +138,7 @@ if data:
         st.session_state['df_pred'] = df_pred
         
 # Get the saved dataframes
-df = st.session_state['df_pred']
+df = st.session_state['df']
 df_pred = st.session_state['df_pred']
 
 if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
