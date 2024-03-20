@@ -13,8 +13,6 @@ import re
 from datetime import datetime
 
 # Initialise the items in station state
-if 'df' not in st.session_state:
-    st.session_state['df'] = pd.DataFrame()
 if 'df_pred' not in st.session_state:
     st.session_state['df_pred'] = pd.DataFrame()
 if 'filename' not in st.session_state:
