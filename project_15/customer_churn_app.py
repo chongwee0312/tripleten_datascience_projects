@@ -108,9 +108,6 @@ if data:
 
     # Show the dataset after preprocessing
     st.write(df)
-
-    # Save the current df in session state
-    st.session_state['df'] = df
     
     # Make the prediction    
     if st.button('Predict'):
@@ -136,8 +133,9 @@ if data:
         df_pred = df.copy()
         df_pred['churn'] = model.predict(X_final)
         
-        st.session_state['df_pred'] = df_pred        
-
+        st.session_state['df'] = df 
+        st.session_state['df_pred'] = df_pred
+        
 # Get the saved dataframes
 df = st.session_state['df']
 df_pred = st.session_state['df_pred']
