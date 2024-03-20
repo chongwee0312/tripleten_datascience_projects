@@ -13,6 +13,8 @@ import re
 from datetime import datetime
 
 # Initialise the items in station state
+if 'df' not in st.session_state:
+    st.session_state['df'] = pd.DataFrame()
 if 'df_pred' not in st.session_state:
     st.session_state['df_pred'] = pd.DataFrame()
 if 'filename' not in st.session_state:
@@ -42,10 +44,7 @@ data = st.file_uploader(label='**Upload the dataset for prediction:**')
 # Read the upload file into a dataframe
 if data:    
     df = pd.read_csv(data)
-    st.session_state['filename'] = data.name
-
-    # To clear the prediction if the data is reuploaded
-    st.session_state['df_pred'] = pd.DataFrame()
+    st.session_state['filename'] = data.name  
     
     # Preprocess the data for prediction
     # Rename columns
@@ -133,13 +132,16 @@ if data:
         
         df_pred = df.copy()
         df_pred['churn'] = model.predict(X_final)        
-        
+
+        # Save the dataframes
+        st.session_state['df'] = df
         st.session_state['df_pred'] = df_pred
         
-# Get the saved dataframe
+# Get the saved dataframes
+df = st.session_state['df_pred']
 df_pred = st.session_state['df_pred']
 
-if data and not df_pred.empty:
+if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
     # Show the prediction
     st.header('Prediction')
     st.write(df_pred)
