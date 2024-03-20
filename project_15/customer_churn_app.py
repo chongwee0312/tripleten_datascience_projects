@@ -13,10 +13,10 @@ import re
 from datetime import datetime
 
 # Initialise the items in station state
+if 'df' not in st.session_state:
+    st.session_state['df'] = pd.DataFrame()
 if 'df_pred' not in st.session_state:
     st.session_state['df_pred'] = pd.DataFrame()
-if 'show_prediction' not in st.session_state:
-    st.session_state['show_prediction'] = False
 if 'filename' not in st.session_state:
     st.session_state['filename'] = ''
 
@@ -134,14 +134,15 @@ if data:
         df_pred = df.copy()
         df_pred['churn'] = model.predict(X_final)        
 
-        # Adjust the session state
-        st.session_state['show_prediction'] = True
+        # Save the session state
+        st.session_state['df'] = df
         st.session_state['df_pred'] = df_pred
         
-# Get the saved dataframe
+# Get the saved dataframes
+df = st.session_state['df']
 df_pred = st.session_state['df_pred']
 
-if st.session_state['show_prediction']:
+if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
     # Show the prediction
     st.header('Prediction')
     st.write(df_pred)
