@@ -40,9 +40,7 @@ st.title('Customer Churn Prediction')
 st.header('Dataset')
 
 # Accept the uploaded dataset
-if st.button('Upload the dataset'):
-    data = st.file_uploader(label='**Upload the dataset for prediction:**')
-    st.session_state['show_prediction'] = False
+data = st.file_uploader(label='**Upload the dataset for prediction:**')
 
 # Read and process the data
 if data:    
