@@ -168,7 +168,6 @@ if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
         
         with col1:            
             plt.figure(figsize=(3, 2))
-            sns.barplot(y=result['churn'])
             sns.barplot(x=result.index, y=result['count'], hue=result.index, palette=['steelblue', 'tomato'])
             plt.title('Customer Churn Rate', y=1.0, fontsize=7, fontweight='bold')
             plt.show()
