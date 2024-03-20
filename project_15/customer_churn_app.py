@@ -12,8 +12,11 @@ import pickle
 import re
 from datetime import datetime
 
+# Initialise the items in station state
 if 'df' not in st.session_state:
     st.session_state['df'] = pd.DataFrame()
+if 'df' not in st.session_state:
+    st.session_state['df_pred'] = pd.DataFrame()
 if 'filename' not in st.session_state:
     st.session_state['filename'] = ''
 
@@ -104,8 +107,11 @@ if data:
     df['total_internet_services'] = df.apply(calc_total_internet_services, axis=1)
 
     # Show the dataset after preprocessing
-    st.write(df)    
+    st.write(df)
 
+    # Save the current df in session state
+    st.session_state['df'] = df
+    
     # Get the features for prediction
     X = df.drop(columns=['customer_id', 'begin_date'])
     
@@ -126,14 +132,17 @@ if data:
             X_final[col] = 0
 
     # Make the prediction    
-    if st.button('Predict'):        
-        df['churn'] = model.predict(X_final)
-        st.session_state['df'] = df        
+    if st.button('Predict'):
+        df_pred = df.copy()
+        df_pred['churn'] = model.predict(X_final)
+        
+        st.session_state['df_pred'] = df_pred        
 
-# Get the dataframe
+# Get the saved dataframes
 df = st.session_state['df']
-    
-if data and 'churn' in df.columns:
+df_pred = st.session_state['df_pred']
+
+if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn']):
     # Show the prediction
     st.header('Prediction')
     st.write(df)
