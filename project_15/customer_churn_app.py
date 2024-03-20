@@ -161,7 +161,7 @@ if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
 
     col1, col2 = st.columns(2)
 
-    # Overall churn rate
+    # Overall churn
     if choice.lower() == 'overall':
         result = df_pred['churn'].value_counts().to_frame()
         result.index = result.index.map({0: 'Stay', 1:'Leave'})
@@ -169,7 +169,7 @@ if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
         with col1:            
             plt.figure(figsize=(3, 2))
             sns.barplot(x=result.index, y=result['count'], hue=result.index, palette=['steelblue', 'tomato'])
-            plt.title('Customer Churn Rate', fontsize=9, fontweight='bold')
+            plt.title('Customer Churn', fontsize=9, fontweight='bold')
             plt.xlabel('')
             plt.ylabel('Number of customers', fontsize=8, fontweight='bold')
             plt.xticks(fontsize=8, fontweight='bold')
