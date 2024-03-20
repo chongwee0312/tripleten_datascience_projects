@@ -142,7 +142,7 @@ if data:
 df = st.session_state['df']
 df_pred = st.session_state['df_pred']
 
-if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn']):
+if data and ('churn' in df.columns) and (df == df_pred.drop(columns=['churn'])):
     # Show the prediction
     st.header('Prediction')
     st.write(df)
