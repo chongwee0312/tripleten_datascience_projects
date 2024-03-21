@@ -182,12 +182,10 @@ if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
             table = result.copy()
             table.rename_axis('', inplace=True)            
             table['percentage'] = round(table['count'] / table['count'].sum() * 100, 2)
-            table['count'] = table['count'].astype(int)  # Convert 'count' column to integers
-            table['percentage'] = table['percentage'].astype(float)
-            
+                        
             for _ in range(2):
                 st.write('#')
-            st.table(table)
+            st.table(table.style.format("{:.2f}"))
 
     # Churn rate for categorical features
     elif choice.lower() in ['type', 'paperless billing', 'payment method', 'gender', 'senior citizen',
