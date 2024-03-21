@@ -187,7 +187,7 @@ if data and ('churn' in df_pred.columns) and ('customer_id' not in df.columns):
             
             for _ in range(2):
                 st.write('#')
-            st.table(table.style.format("{:.2f}"))
+            st.table(table)
 
     # Churn rate for categorical features
     elif choice.lower() in ['type', 'paperless billing', 'payment method', 'gender', 'senior citizen',
