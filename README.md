@@ -20,3 +20,4 @@ Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Plotly, Requests, Bea
 | [project_13](project_13) | Sentiment Analysis on Movie Reviews | Data Visualisation, Classification Model, Natural Language Processing, Model Deployment |
 | [project_14](project_14) | Developing an Age Detector by Photo | Data Visualisation, Regression Model, Computer Vision |
 | [project_15](project_15) | Telecom Customer Churn Prediction | Data Wrangling, Data Visualisation, EDA, Classification Model |
+| [extra_01](extra_01) |Cluster Analysis on US Universities and Colleges | Data Visualisation, EDA, Cluster Analysis |
