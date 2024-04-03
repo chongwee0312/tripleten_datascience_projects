@@ -22,4 +22,4 @@ Main Libraries: Pandas, Numpy, Scipy, Matplotlib, Seaborn, Plotly, Requests, Bea
 | [project_15](project_15) | Telecom Customer Churn Prediction | Data Wrangling, Data Visualisation, EDA, Classification Model |
 | [extra_01](extra_01) | Cluster Analysis on US Universities and Colleges | Data Visualisation, EDA, Cluster Analysis |
 | [extra_02](extra_02) | Market Basket Analysis for a Retailer | Data Visualisation, EDA, Market Basket Analysis |
-| [extra_03](extra_03) | Anime Recommendation System | Collaborative and Content-Based Filtering Recommendation System |
+| [extra_03](extra_03) | Anime Recommendation System | Collaborative and Content-Based Filtering Recommendation Systems |
