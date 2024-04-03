@@ -40,7 +40,7 @@ Pandas, Numpy, Matplotlib, Seaborn, Tensorflow
 5. Collaborative Filtering Recommendation System
    - 5.1 Data Preparation
    - 5.2 Modeling
-   - 5.3 Recommend the Existing Animes with the Highest Predicted Ratings to an Existing User]
+   - 5.3 Recommend the Existing Animes with the Highest Predicted Ratings to an Existing User
    - 5.4 Recommend an Existing Anime to the Existing Users who Have the Highest Predicted Ratings
    - 5.5 Recommend the Existing Animes which are Most Similar to the Highest Rated Animes by an Existing User (Item Based Recommendation)
    - 5.6 Recommend the Exisitng Highest Rated Animes by the Most Similar Users to an Existing User (User Based Recommendation)
